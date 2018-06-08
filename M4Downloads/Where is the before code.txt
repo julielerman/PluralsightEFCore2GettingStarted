@@ -1,0 +1,1 @@
+In the 4th module (interacting with related data),  you will start with the ending point of the previous module (interacting with simple objects). So this module's "BEFORE" is the same as the previous module's "AFTER".

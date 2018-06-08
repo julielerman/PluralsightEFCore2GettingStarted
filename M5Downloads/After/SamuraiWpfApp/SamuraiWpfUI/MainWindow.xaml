@@ -1,0 +1,54 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SamuraiWpfUI"
+        xmlns:Domain="clr-namespace:SamuraiApp.Domain;assembly=SamuraiApp.Domain" x:Class="SamuraiWpfUI.MainWindow"
+        mc:Ignorable="d"
+        Title="Samurai Window" Height="600" Width="760" FontSize="16" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="samuraiViewSource" />
+        <!--d:DesignSource="{d:DesignInstance {x:Type Domain:Samurai}, CreateList=True}"/>-->
+        <CollectionViewSource x:Key="samuraiQuotesViewSource" Source="{Binding Quotes, Source={StaticResource samuraiViewSource}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource samuraiViewSource}">
+
+        <ListBox x:Name="samuraiListBox" 
+                 SelectedValuePath="Id" 
+                Height="143" Margin="30,10,0,0"
+                 VerticalAlignment="Top" Width="437"
+                 DisplayMemberPath="Name" SelectionChanged="samuraiListBox_SelectionChanged" HorizontalAlignment="Left"/>
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="30,188,0,0" VerticalAlignment="Top" Width="414">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="nameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="38,7,-212,7" Grid.Row="0" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="303" LostFocus="nameTextBox_LostFocus"/>
+        </Grid>
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="30,225,0,0" VerticalAlignment="Top" Width="414">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Real Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="realNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,7,-180,7" Grid.Row="0" Text="{Binding SecretIdentity.RealName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="304" TextChanged="realNameTextBox_TextChanged"/>
+        </Grid>
+        <DataGrid x:Name="quotesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource samuraiQuotesViewSource}}" Margin="30,305,171,10" RowDetailsVisibilityMode="VisibleWhenSelected" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="textColumn" Binding="{Binding Text}" Header="Quotes" Width="1*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="NewSamuraiButton" Content="New Samurai" HorizontalAlignment="Left" Margin="602,16,0,0" VerticalAlignment="Top" Width="126" Height="27" Click="NewSamuraiButton_Click"/>
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Margin="602,482,0,0" VerticalAlignment="Top" Width="126" Click="SaveButton_Click">
+        </Button>
+
+    </Grid>
+</Window>

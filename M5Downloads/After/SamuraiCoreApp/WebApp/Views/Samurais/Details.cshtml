@@ -1,0 +1,44 @@
+﻿@model SamuraiApp.Domain.Samurai
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Samurai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecretIdentity.RealName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecretIdentity.RealName)
+        </dd>
+    </dl>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Quotes</th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.Quotes)
+    {
+        <tr>
+             <td>@item.Text </td>
+         </tr>
+    }
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
