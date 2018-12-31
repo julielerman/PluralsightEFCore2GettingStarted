@@ -1,10 +1,17 @@
 # Pluralsight Course: EF Core 2: GettingStarted
+## I have updated all of the projects to use  EF Core 2.2
 Sample code for my "EF Core 2: Getting Started" course released Feb 2018  
-THIS FOLDER CONTAINS SOLUTIONS THAT HAVE BEEN UPDATED TO EF Core 2.2, dotnet core 2.2 and asp.net core 2.2
 
-This is the source code for Pluralsight course EF Core 2: Getting Started. I have updated all of the projects to use  EF Core 2.1.
 
-Most of these changes are just package ref changes in the csproj files. The only code change I made is in the Module 3 after and Module 4 after, program.cs, where there is a new method to demonstrate a change to batching in EF COre 2.1. By default, batching is only used when there are 4 or more commands to send to the database.
+This is the source code for Pluralsight course EF Core 2: Getting Started.  
+
+
+Most of these changes are just package ref changes in the csproj files.   
+
+The only code changes I made are: 
+
+* in the Module 3 after and Module 4 after, program.cs, where there is a new method to demonstrate a change to batching in EF COre 2.1. By default, batching is only used when there are 4 or more commands to send to the database.
+* I have updated the logging syntax used in the DbContext files to reflect the simpler APIs in 2.2. You'll find this code in the BEFORE and AFTER solutions with comments to explain
 
 You can watch the course at: http://bit.ly/2oBvekc.
 
