@@ -1,5 +1,5 @@
 # Pluralsight Course: EF Core 2: GettingStarted
-Sample code for my "EF Core 2: Getting Started" course released Feb 2018
+Sample code for my "EF Core 2: Getting Started" course released Feb 2018  
 THIS FOLDER CONTAINS SOLUTIONS THAT HAVE BEEN UPDATED TO EF Core 2.2, dotnet core 2.2 and asp.net core 2.2
 
 This is the source code for Pluralsight course EF Core 2: Getting Started. I have updated all of the projects to use  EF Core 2.1.
