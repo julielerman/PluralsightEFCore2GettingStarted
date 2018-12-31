@@ -33,7 +33,7 @@ namespace SomeUI
             #endregion
 
             //______Methods added in Module 4 (Working with related data)______
-            //InsertNewPkFkGraph();
+            InsertNewPkFkGraph();
             //InsertNewPkFkGraphMultipleChildren();
             //AddChildToExistingObjectWhileTracked();
             //AddChildToExistingObjectWhileNotTracked(1);

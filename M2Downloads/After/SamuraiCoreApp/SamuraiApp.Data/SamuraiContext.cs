@@ -17,8 +17,11 @@ namespace SamuraiApp.Data
             (ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SamuraiBattle>()
-                .HasKey(s => new { s.BattleId,
-                                   s.SamuraiId });
+                .HasKey(s => new
+                {
+                    s.BattleId,
+                    s.SamuraiId
+                });
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
