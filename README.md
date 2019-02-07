@@ -11,7 +11,7 @@ Most of these changes are just package ref changes in the csproj files.
 The only code changes I made are: 
 
 * in the Module 3 After and Module 4 After, program.cs, where there is a new method to demonstrate a change to batching in EF COre starting with 2.1. The change that came to 2.1 is that by default, batching is only used when there are 4 or more commands to send to the database.
-* I have updated the logging syntax used in the DbContext files to reflect the simpler APIs in 2.2. You'll find this code in the BEFORE and AFTER solutions with comments to explain. For more detail on this change, I've written this blog post: http://thedatafarm.com/data-access/logging-in-ef-core-2-2-has-a-simpler-syntax-more-like-asp-net-core/.
+* I have updated the logging syntax used in the DbContext files to reflect the simpler APIs that arrived in 2.2. You'll find this code in the BEFORE and AFTER solutions with comments to explain. For more detail on this change, I've written this blog post: http://thedatafarm.com/data-access/logging-in-ef-core-2-2-has-a-simpler-syntax-more-like-asp-net-core/.
 
 You can watch the course at: http://bit.ly/2oBvekc.
 
